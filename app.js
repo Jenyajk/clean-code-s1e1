@@ -8,12 +8,10 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-var taskInput=document.querySelector(".new-task_input");//Add a new task.
+var taskInput=document.getElementById("new-task_input");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
-var incompleteTaskHolder=document.querySelector(".task-list");//ul of #incompleteTasks
-var completedTasksHolder=document.querySelector(".completed-tasks");
-var add=document.getElementsByTagName('li');//completed-tasks
-console.log(add);
+var incompleteTaskHolder=document.getElementById("task-list");//ul of #incompleteTasks
+var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
 
 
 //New task list item
@@ -33,19 +31,17 @@ var createNewTaskElement=function(taskString){
     //button.delete
     var deleteButton=document.createElement("button");//delete button
     var deleteButtonImg=document.createElement("img");//delete button image
-    var add=document.getElementsByTagName('li');
 
     label.innerText=taskString;
-    label.className='task label';
-    add.className='task-list_item ';
-
+    label.className='task';
+    label.id="label"
 
     //Each elements, needs appending
     checkBox.type="checkbox";
     checkBox.className="checkbox"
     editInput.type="text";
-    editInput.className="task task-input";
-
+    editInput.className="task";
+    editInput.id="task-input";
 
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
@@ -94,7 +90,7 @@ var editTask=function(){
     var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("task-list_item_active");
+    var containsClass=listItem.classList.contains("edit-mode");
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -108,7 +104,7 @@ var editTask=function(){
     }
 
     //toggle .editmode on the parent.
-    listItem.classList.toggle("task-list_item_active");
+    listItem.classList.toggle("edit-mode");
 };
 
 

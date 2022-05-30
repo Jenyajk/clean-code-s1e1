@@ -16,6 +16,10 @@
     width: 100%;
 }
 
+.more-inf {
+    font-family: fantasy, cursive;
+}
+
 @media (max-width:768px) {
 
     .page_inf {
@@ -80,7 +84,7 @@ h3 {
     text-transform: uppercase;
 }
 
-.task-input {
+#task-input {
     margin: 0;
     font-size: 18px;
     line-height: 18px;
@@ -93,7 +97,7 @@ h3 {
     color: #888;
 }
 
-.task-input:focus {
+#task-input:focus {
     color: #333;
 }
 
@@ -103,7 +107,7 @@ h3 {
     margin: 0 0 20px;
 }
 
-.new-task_input {
+#new-task_input {
     width: 318px;
     margin: 0;
     font-size: 18px;
@@ -130,14 +134,14 @@ li {
     margin: 0 10px;
 }
 
-.label {
+#label {
     padding-left: 10px;
     box-sizing: border-box;
     font-size: 18px;
     width: 226px;
 }
 
-.task-input {
+#task-input {
     width: 226px;
 }
 
@@ -152,7 +156,7 @@ li {
 }
 
 /* Completed */
-.completed-tasks label {
+#completed-tasks label {
     text-decoration: line-through;
     color: #888;
 }
