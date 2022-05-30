@@ -34,17 +34,22 @@ var createNewTaskElement=function(taskString){
 
     label.innerText=taskString;
     label.className='task';
+    label.id="label"
 
     //Each elements, needs appending
     checkBox.type="checkbox";
+    checkBox.className="checkbox"
     editInput.type="text";
     editInput.className="task";
+    editInput.id="task-input";
+
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
     editButton.className="edit";
 
     deleteButton.className="delete";
     deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.className = "delete_img";
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -160,12 +165,14 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
     var deleteButton=taskListItem.querySelector("button.delete");
 
 
+
     //Bind editTask to edit button.
     editButton.onclick=editTask;
     //Bind deleteTask to delete button.
     deleteButton.onclick=deleteTask;
     //Bind taskCompleted to checkBoxEventHandler.
     checkBox.onchange=checkBoxEventHandler;
+
 }
 
 //cycle over incompleteTaskHolder ul list items
