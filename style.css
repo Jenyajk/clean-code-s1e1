@@ -84,7 +84,8 @@ h3 {
     text-transform: uppercase;
 }
 
-#task-input {
+.task-list_input {
+    width: 226px;
     margin: 0;
     font-size: 18px;
     line-height: 18px;
@@ -97,7 +98,7 @@ h3 {
     color: #888;
 }
 
-#task-input:focus {
+.task-list_input:focus {
     color: #333;
 }
 
@@ -134,14 +135,10 @@ li {
     margin: 0 10px;
 }
 
-#label {
+.label {
     padding-left: 10px;
     box-sizing: border-box;
     font-size: 18px;
-    width: 226px;
-}
-
-#task-input {
     width: 226px;
 }
 
