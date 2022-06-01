@@ -8,10 +8,10 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-var taskInput=document.getElementById("new-task_input");//Add a new task.
+var taskInput=document.querySelector(".new-task_input");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
 var incompleteTaskHolder=document.querySelector(".task-list");//ul of #incompleteTasks
-var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
+var completedTasksHolder=document.querySelector(".task-list_completed");//completed-tasks
 
 
 //New task list item
@@ -34,19 +34,19 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task label';
+    label.className='task-list_label';
 
     //Each elements, needs appending
     checkBox.type="checkbox";
-    checkBox.className="checkbox"
+    checkBox.className="task-list_checkbox"
     editInput.type="text";
-    editInput.className="task task-list_input";
+    editInput.className="task-list_input";
 
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit button";
+    editButton.className="task-list_button-edit";
 
-    deleteButton.className="delete button";
+    deleteButton.className="task-list_button-delete";
     deleteButtonImg.src='./remove.svg';
     deleteButtonImg.className = "delete_img";
     deleteButton.appendChild(deleteButtonImg);
@@ -88,8 +88,8 @@ var editTask=function(){
 
     var editInput=listItem.querySelector('input[type=text]');
     var label=listItem.querySelector("label");
-    var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("edit-mode");
+    var editBtn=listItem.querySelector(".task-list_button-edit");
+    var containsClass=listItem.classList.contains("task-list_edit-mode");
     //If class of the parent is .editmode
     if(containsClass){
 
@@ -103,7 +103,7 @@ var editTask=function(){
     }
 
     //toggle .editmode on the parent.
-    listItem.classList.toggle("edit-mode");
+    listItem.classList.toggle("task-list_edit-mode");
 };
 
 
@@ -160,8 +160,8 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
     console.log("bind list item events");
 //select ListItems children
     var checkBox=taskListItem.querySelector("input[type=checkbox]");
-    var editButton=taskListItem.querySelector("button.edit");
-    var deleteButton=taskListItem.querySelector("button.delete");
+    var editButton=taskListItem.querySelector(".task-list_button-edit");
+    var deleteButton=taskListItem.querySelector(".task-list_button-delete");
 
 
 
